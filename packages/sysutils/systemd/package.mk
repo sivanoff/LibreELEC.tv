@@ -250,4 +250,5 @@ post_install() {
   enable_service debugconfig.service
   enable_service userconfig.service
   enable_service hwdb.service
+  enable_service openvpn.service
 }
