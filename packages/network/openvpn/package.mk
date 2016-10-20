@@ -49,4 +49,6 @@ PKG_CONFIGURE_OPTS_TARGET="ac_cv_have_decl_TUNSETPERSIST=no \
 post_makeinstall_target() {
   mkdir -p $INSTALL/usr/bin
     ln -sf ../sbin/openvpn $INSTALL/usr/bin/openvpn
+  mkdir -p $INSTALL/usr/share/openvpn/
+    cp $PKG_DIR/config/vpn.ovpn $INSTALL/usr/share/openvpn/
 }
