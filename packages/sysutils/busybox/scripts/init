@@ -1000,21 +1000,21 @@
 #      cp /flash/$IMAGE_SYSTEM /dev/$IMAGE_SYSTEM
 #      mount_part "/dev/$IMAGE_SYSTEM" "/sysroot" "ro,loop"
 #    fi
-    mount -t ext4 /dev/data /sysroot
 
+    mount -t ext4 /dev/data /sysroot
     mount --move /flash /sysroot/flash
     mount --move /storage /sysroot/storage
 
-    if [ ! -d "/sysroot/usr/lib/modules/$(uname -r)/" -a -f "/sysroot/usr/lib/systemd/systemd" ]; then
-      echo ""
-      echo "NEVER TOUCH boot= in extlinux.conf / cmdline.txt!"
-      echo "If you don't know what you are doing,"
-      echo "your installation is now broken."
-      echo ""
-      StartProgress countdown "Normal startup in 60s... " 60 "NOW"
-    fi
+#    if [ ! -d "/sysroot/lib/modules/$(uname -r)/" -a -f "/sysroot/usr/lib/systemd/systemd" ]; then
+#      echo ""
+#      echo "NEVER TOUCH boot= in extlinux.conf / cmdline.txt!"
+#      echo "If you don't know what you are doing,"
+#      echo "your installation is now broken."
+#      echo ""
+#      StartProgress countdown "Normal startup in 60s... " 60 "NOW"
+#    fi
 
-    [ -f "/sysroot/usr/lib/systemd/systemd" ] || error "final_check" "Could not find systemd!"
+#    [ -f "/sysroot/usr/lib/systemd/systemd" ] || error "final_check" "Could not find systemd!"
   }
 
   # If the network is up (due to the use of the "ip" kernel parameter) and a DNS
@@ -1086,6 +1086,6 @@
   fi
 
   # switch to new sysroot and start real init
-  exec /usr/bin/busybox switch_root /sysroot /usr/lib/systemd/systemd $INIT_ARGS $INIT_UNIT
+  exec /usr/bin/busybox switch_root /sysroot /sbin/init
 
   error "switch_root" "Error in initramfs. Could not switch to new root"
