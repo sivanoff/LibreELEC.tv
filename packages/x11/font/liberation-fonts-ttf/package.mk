@@ -40,6 +40,6 @@ makeinstall_target() {
 }
 
 post_install() {
-  mkfontdir $INSTALL/usr/share/fonts/liberation
-  mkfontscale $INSTALL/usr/share/fonts/liberation
+  LD_LIBRARY_PATH="" mkfontdir $INSTALL/usr/share/fonts/liberation
+  LD_LIBRARY_PATH="" mkfontscale $INSTALL/usr/share/fonts/liberation
 }
