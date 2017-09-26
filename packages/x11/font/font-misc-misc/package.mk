@@ -59,6 +59,6 @@ makeinstall_target() {
 }
 
 post_install() {
-  mkfontdir $INSTALL/usr/share/fonts/misc
-  mkfontscale $INSTALL/usr/share/fonts/misc
+  LD_LIBRARY_PATH="" mkfontdir $INSTALL/usr/share/fonts/misc
+  LD_LIBRARY_PATH="" mkfontscale $INSTALL/usr/share/fonts/misc
 }
