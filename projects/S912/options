@@ -48,9 +48,9 @@
   # Kernel to use. values can be:
   # default:  default mainline kernel
     LINUX="custom"
-    KERNEL_VERSION="c0871381f7ee2c437fcdaee25e32b5572d9488f2"
-    KERNEL_URL="https://github.com/150balbes/Amlogic_s905-kernel/archive/$KERNEL_VERSION.tar.gz"
-    KERNEL_SOURCE_DIR="Amlogic_s905-kernel-$KERNEL_VERSION*"
+    KERNEL_VERSION="79b5701"
+    KERNEL_URL="https://github.com/kszaq/linux-amlogic-le/archive/$KERNEL_VERSION.tar.gz"
+    KERNEL_SOURCE_DIR="linux-amlogic-le-$KERNEL_VERSION*"
     KERNEL_PATCH_DIRS="amlogic-3.14"
 
 ################################################################################
@@ -100,7 +100,7 @@
   # for a list of additinoal drivers see packages/linux-drivers
   # Space separated list is supported,
   # e.g. ADDITIONAL_DRIVERS="DRIVER1 DRIVER2"
-    ADDITIONAL_DRIVERS="qca9377-aml"
+    ADDITIONAL_DRIVERS="gpu-aml qca9377-aml"
 
   # additional Firmware to use (dvb-firmware, misc-firmware, wlan-firmware)
   # Space separated list is supported,
